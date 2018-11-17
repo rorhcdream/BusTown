@@ -8,6 +8,8 @@ public class GridGraph<T> where T : IPosition
 
     private int vertexNumber;
     private Dictionary<Grid, Vertex<T>> vertexDictionary;
+
+    
     private bool vertexDictionary_TryGetValue(Grid key, out Vertex<T> value, bool ignore_key_value_error)
     {
         if (ignore_key_value_error)
@@ -54,6 +56,7 @@ public class GridGraph<T> where T : IPosition
                                               
     }
     ********************************************/
+
     public bool AddEdge(Grid start, Grid end, float weightCoefficient, bool ignore_key_value_error = false)
     {
         Vertex<T> vertex_start;
@@ -109,8 +112,9 @@ public class GridGraph<T> where T : IPosition
         }
     }
 
-    public LinkedList<Vector2> Dijkstra(Vector2 start, Area end)
+    public LinkedList<T> Dijkstra(Grid start, Area end)
     {
+
         return null;
     }
 

@@ -29,6 +29,15 @@ public class MapMgr : MonoBehaviour
     private GridGraph<DrivewayNode> drivewayGraph;
 
     private Dictionary<Grid,Block> blockTable;
+
+    private Frame frame;
+
+    //set frame
+    public void Start()
+    {
+        frame = new Frame();
+    }
+
     //blockTable에서 key값을 찾을 수 없으면 에러를 발생시킨다.
     private Block blockTable_TryGetValue(Grid key)
     {
@@ -343,6 +352,7 @@ public class MapMgr : MonoBehaviour
     /// <param name="dest">Destination.</param>
     public Queue<SidewalkNode> GetPathFromRandomNode(Area dest)
     {
+        
         return null;
     }
 }
