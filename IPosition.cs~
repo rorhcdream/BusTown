@@ -1,0 +1,7 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public interface IPosition 
+{
+    Vector2 GetPosition();
+}

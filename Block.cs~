@@ -1,0 +1,29 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Block : MonoBehaviour {
+
+    private Grid blockPos;
+    public Area Area
+    {
+        get;
+        private set;
+    }
+
+
+    public Block(Grid blockPos)
+    {
+        this.blockPos = blockPos;
+    }
+
+    public Vector2 GetRandomRespawnArea()
+    {
+        return Vector2.zero;
+    }
+
+
+
+
+
+}
