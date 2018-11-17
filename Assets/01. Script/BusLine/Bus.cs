@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Bus : MonoBehaviour 
 {
-    private 
+    private List<Citizen> passengers = new List<Citizen>();
+    private List<DrivewayNode> path;
 }

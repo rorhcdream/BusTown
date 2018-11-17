@@ -1,17 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SidewalkNode_TrafficLight : MonoBehaviour
+public class DrivewayNode_TrafficLight : DrivewayNode
 {
-    // Use this for initialization
-    void Start()
+    public override bool IsPassable()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

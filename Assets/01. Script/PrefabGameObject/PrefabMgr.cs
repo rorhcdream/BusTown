@@ -48,7 +48,7 @@ public class PrefabMgr : MonoBehaviour {
     }
 
     public GameObject drivewayTrafficLight_Prefab;
-    public void Instantiate_DrivewayTrafficLight(Transform parent, Vector2 pos, Grid rot, TrafficLight trafficLight)
+    public void Instantiate_DrivewayTrafficLight(Transform parent, Vector2 pos, Grid rot, TrafficLightTimer trafficLight)
     {
         GameObject obj = Instantiate(drivewayTrafficLight_Prefab, parent, pos, rot);
 
@@ -60,13 +60,13 @@ public class PrefabMgr : MonoBehaviour {
     }
     public class DrivewayTrafficLight : MonoBehaviour
     {
-        private TrafficLight trafficLight;
+        private TrafficLightTimer trafficLight;
 
         /********필요한 컴포넌트들**********/
         private SpriteRenderer spriteRenderer;
         /******************************/
 
-        public void SetTrafficLight(TrafficLight trafficLight)
+        public void SetTrafficLight(TrafficLightTimer trafficLight)
         {
             this.trafficLight = trafficLight;
         }
@@ -95,7 +95,7 @@ public class PrefabMgr : MonoBehaviour {
     }
 
     public GameObject sidewalkTrafficLight_Prefab;
-    public void Instantiate_SidewalkTrafficLight(Transform parent, Vector2 pos, Grid rot, TrafficLight trafficLight)
+    public void Instantiate_SidewalkTrafficLight(Transform parent, Vector2 pos, Grid rot, TrafficLightTimer trafficLight)
     {
         GameObject obj = Instantiate(sidewalkTrafficLight_Prefab, parent, pos, rot);
 
@@ -109,12 +109,12 @@ public class PrefabMgr : MonoBehaviour {
     }
     public class SidewalkTrafficLight : MonoBehaviour
     {
-        private TrafficLight trafficLight;
+        private TrafficLightTimer trafficLight;
 
         /********필요한 컴포넌트들**********/
         private SpriteRenderer spriteRenderer;
         /******************************/
-        public void SetTrafficLight(TrafficLight trafficLight)
+        public void SetTrafficLight(TrafficLightTimer trafficLight)
         {
             this.trafficLight = trafficLight;
         }

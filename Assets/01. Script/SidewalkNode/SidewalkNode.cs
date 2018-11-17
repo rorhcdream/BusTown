@@ -17,7 +17,7 @@ public class SidewalkNode : MonoBehaviour, IPosition
 
 
     //Type이 TrafficLight일때만 사용한다.
-    public TrafficLight TrafficLight { get; private set; }
+    public TrafficLightTimer TrafficLight { get; private set; }
 
     public SidewalkNode(SidewalkNodeType sidewalkNodeType, Grid grid, Vector2 position)
     {

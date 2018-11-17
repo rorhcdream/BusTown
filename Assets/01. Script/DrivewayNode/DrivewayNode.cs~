@@ -16,7 +16,7 @@ public class DrivewayNode : MonoBehaviour, IPosition
     public Vector2 Position { get; private set; }
 
     //Type이 TrafficLight일때만 사용한다.
-    public TrafficLight TrafficLight { get; private set; }
+    public TrafficLightTimer TrafficLight { get; private set; }
 
     public DrivewayNode(DrivewayNodeType drivewayNodeType, Grid grid, Vector2 position)
     {
@@ -30,4 +30,9 @@ public class DrivewayNode : MonoBehaviour, IPosition
         this.DrivewayNodeType = drivewayNodeType;
     }
 
+
+    public virtual bool IsPassable()
+    {
+        return true;
+    }
 }

@@ -68,9 +68,11 @@
     <Compile Include="Assets\01. Script\BusLine\BusLine.cs" />
     <Compile Include="Assets\01. Script\BusLine\BusStation.cs" />
     <Compile Include="Assets\01. Script\Citizen.cs" />
+    <Compile Include="Assets\01. Script\CitizenMgr.cs" />
     <Compile Include="Assets\01. Script\DrivewayNode\DrivewayNode.cs" />
     <Compile Include="Assets\01. Script\DrivewayNode\DrivewayNode_TrafficLight.cs" />
     <Compile Include="Assets\01. Script\DrivewayNode\DrivewayNodeType.cs" />
+    <Compile Include="Assets\01. Script\Frame.cs" />
     <Compile Include="Assets\01. Script\GameMgr.cs" />
     <Compile Include="Assets\01. Script\Graph\Graph.cs" />
     <Compile Include="Assets\01. Script\Graph\Grid.cs" />
@@ -79,13 +81,14 @@
     <Compile Include="Assets\01. Script\Graph\PriorityQueue.cs" />
     <Compile Include="Assets\01. Script\Graph\Vertex.cs" />
     <Compile Include="Assets\01. Script\IPosition.cs" />
-    <Compile Include="Assets\01. Script\Map.cs" />
+    <Compile Include="Assets\01. Script\MapMgr.cs" />
+    <Compile Include="Assets\01. Script\PrefabGameObject\DrivewayTrafficLight.cs" />
     <Compile Include="Assets\01. Script\PrefabGameObject\PrefabMgr.cs" />
     <Compile Include="Assets\01. Script\PrefabGameObject\SidewalkTrafficLight.cs" />
     <Compile Include="Assets\01. Script\SidewalkNode\SidewalkNode.cs" />
     <Compile Include="Assets\01. Script\SidewalkNode\SidewalkNode_TrafficLight.cs" />
     <Compile Include="Assets\01. Script\SidewalkNode\SidewalkNodeType.cs" />
-    <Compile Include="Assets\01. Script\TrafficLight.cs" />
+    <Compile Include="Assets\01. Script\TrafficLightTimer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/corvuspink/MEGA/00. Project/02. MiniBus/MiniBus/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
