@@ -1,0 +1,30 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PrefabMgr : MonoBehaviour {
+
+
+
+    /**************************GameObject Prefab*******************************/
+    public GameObject drivewayTrafficLight_Prefab;
+    public void Instantiate_DrivewayTrafficLight(Transform parent, Vector2 pos, Grid rot, TrafficLight trafficLight)
+    {
+        Quaternion quat;
+
+        if (rot == Grid.up) quat = Quaternion.AngleAxis(0.0f, Vector3.forward);
+        else if (rot == Grid.left) quat = Quaternion.AngleAxis(90.0f, Vector3.forward);
+        else if (rot == Grid.down) quat = Quaternion.AngleAxis(180.0f, Vector3.forward);
+        else if (rot == Grid.left) quat = Quaternion.AngleAxis(270.0f, Vector3.forward);
+        else throw new System.Exception();
+
+        GameObject obj = Instantiate(drivewayTrafficLight_Prefab, pos, quat, parent);
+
+        DrivewayTrafficLight comp = obj.AddComponent<DrivewayTrafficLight>();
+        if (comp == null) throw new System.Exception();
+        comp.
+
+    }
+    public GameObject sidewalkTrafficLight_Prefab;
+
+}

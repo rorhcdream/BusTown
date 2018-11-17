@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{8AECD46E-69E3-6C53-06D9-993DE3EF0964}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/01. Script/DrivewayNode/DrivewayNode_TrafficLight.cs">
+    <Files>
+      <File FileName="Assets/01. Script/Map.cs" Line="325" Column="31" />
+      <File FileName="Assets/01. Script/Block/Block.cs" Line="13" Column="23" />
+      <File FileName="Assets/01. Script/Graph/Graph.cs" Line="25" Column="50" />
+      <File FileName="Assets/01. Script/Graph/GridEdge.cs" Line="15" Column="12" />
+      <File FileName="Assets/01. Script/Graph/Vertex.cs" Line="5" Column="14" />
+      <File FileName="Assets/01. Script/Graph/PriorityQueue.cs" Line="5" Column="55" />
+      <File FileName="Assets/01. Script/Citizen.cs" Line="8" Column="1" />
+      <File FileName="Assets/01. Script/Graph/GridGraph.cs" Line="93" Column="6" />
+      <File FileName="Assets/01. Script/BusLine/Bus.cs" Line="7" Column="13" />
+      <File FileName="Assets/01. Script/Graph/Grid.cs" Line="43" Column="24" />
+      <File FileName="Assets/01. Script/Block/Area.cs" Line="5" Column="10" />
+      <File FileName="Assets/01. Script/BusLine/BusStation.cs" Line="8" Column="37" />
+      <File FileName="Assets/01. Script/DrivewayNode/DrivewayNode.cs" Line="17" Column="5" />
+      <File FileName="Assets/01. Script/Block/AreaMgr.cs" Line="9" Column="6" />
+      <File FileName="Assets/01. Script/SidewalkNode/SidewalkNode.cs" Line="18" Column="5" />
+      <File FileName="Assets/01. Script/TrafficLight.cs" Line="13" Column="26" />
+      <File FileName="Assets/01. Script/SidewalkNode/SidewalkNodeType.cs" Line="6" Column="18" />
+      <File FileName="Assets/01. Script/BusLine/BusLine.cs" Line="18" Column="1" />
+      <File FileName="Assets/01. Script/DrivewayNode/DrivewayNodeType.cs" Line="7" Column="15" />
+      <File FileName="Assets/01. Script/GameMgr.cs" Line="18" Column="1" />
+      <File FileName="Assets/01. Script/IPosition.cs" Line="8" Column="1" />
+      <File FileName="Assets/01. Script/PrefabGameObject/SidewalkTrafficLight.cs" Line="6" Column="5" />
+      <File FileName="Assets/01. Script/PrefabGameObject/DrivewayTrafficLight.cs" Line="11" Column="38" />
+      <File FileName="Assets/01. Script/PrefabGameObject/PrefabMgr.cs" Line="61" Column="1" />
+      <File FileName="Assets/01. Script/SidewalkNode/SidewalkNode_TrafficLight.cs" Line="4" Column="39" />
+      <File FileName="Assets/01. Script/DrivewayNode/DrivewayNode_TrafficLight.cs" Line="4" Column="39" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
