@@ -10,7 +10,7 @@ public class GridGraph<T> where T : IPosition
     private Dictionary<Grid, Vertex<T>> vertexDictionary;
 
     
-    private bool vertexDictionary_TryGetValue(Grid key, out Vertex<T> value, bool ignore_key_value_error)
+    protected bool vertexDictionary_TryGetValue(Grid key, out Vertex<T> value, bool ignore_key_value_error)
     {
         if (ignore_key_value_error)
         {
@@ -111,13 +111,4 @@ public class GridGraph<T> where T : IPosition
             }
         }
     }
-
-    public LinkedList<T> Dijkstra(Grid start, Area end)
-    {
-
-        return null;
-    }
-
-
-
 }

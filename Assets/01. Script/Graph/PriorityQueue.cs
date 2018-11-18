@@ -66,6 +66,11 @@ public class PriorityQueue<T> where T : IComparable<T>
         return data.Count;
     }
 
+    public bool isEmpty()
+    {
+        return data.Count == 0;
+    }
+
     public override string ToString()
     {
         string s = "";

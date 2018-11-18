@@ -1,22 +1,42 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 //Struct 공부해서 그걸로 만들기
 public struct Grid 
 {
-
-    public float offset_x { get; private set; }
-    public float offset_y { get; private set; }
+    private float _offset_x;
+    private float _offset_y;
+    public float offset_x
+    {
+        get { return _offset_x; }
+        private set
+        {
+            if (value > 1.0f || value < 0.0f)
+                throw new ArgumentOutOfRangeException("Grid.offset_x", value, "input should be 0f < value < 1f");
+            else _offset_x = value;
+        }
+    }
+    public float offset_y
+    {
+        get { return _offset_y; }
+        private set
+        {
+            if (value > 1.0f || value < 0.0f)
+                throw new ArgumentOutOfRangeException("Grid.offset_y", value, "input should be 0f < value < 1f");
+            else _offset_y = value;
+        }
+    }
     public int block_x { get; private set; }
     public int block_y { get; private set; }
 
-    public Grid(int block_x, int block_y, float offset_x = 0.0f, float offset_y = 0.0f )
+    public Grid(int block_x, int block_y, float offset_x = 0.0f, float offset_y = 0.0f ) : this()
     {
-        this.offset_x = offset_x;
-        this.offset_y = offset_y;
         this.block_x = block_x;
         this.block_y = block_y;
+        this.offset_x = offset_x;
+        this.offset_y = offset_y;
     }
     /// <summary>
     /// return new Grid(1, 0);
@@ -42,15 +62,15 @@ public struct Grid
     public static Grid[] UDLR = { up, down, left, right };
     public static Grid GetRandomUDLR()
     {
-        int i = Random.Range(0, 4);
+        int i = UnityEngine.Random.Range(0, 4);
 
         switch(i)
         {
-            case 0: return up; break;
-            case 1: return down; break;
-            case 2: return left; break;
-            case 3: return right; break;
-            default: throw new System.Exception(); break;
+            case 0: return up;
+            case 1: return down;
+            case 2: return left; 
+            case 3: return right;
+            default: throw new System.Exception();
         }
     }
 

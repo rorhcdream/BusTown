@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //간선을 나타내는 클래스이다.
-public class GridEdge : MonoBehaviour
+public class GridEdge
 {
     //끝 정점의 ID를 관리하고
     //W는 Weight 인터페이스를 구현하는 클래스라면 뭐든 올 수 있다.

@@ -25,7 +25,7 @@ public class MapMgr : MonoBehaviour
     public readonly float bus_weight_coefficient = 1 / GameMgr.BUS_SPEED;
 
 
-    private GridGraph<SidewalkNode> sidewalkGraph;
+    private GridGraph_SidewalkNode sidewalkGraph;
     private GridGraph<DrivewayNode> drivewayGraph;
 
     private Dictionary<Grid,Block> blockTable;
@@ -354,6 +354,6 @@ public class MapMgr : MonoBehaviour
     {
         Grid newGrid = frame.GetRandomGridInFrame();
 
-        return new Queue<SidewalkNode>(sidewalkGraph.Dijkstra(newGrid, dest));
+        return new Queue<SidewalkNode>(sidewalkGraph.FindPath(newGrid, dest));
     }
 }
