@@ -352,7 +352,8 @@ public class MapMgr : MonoBehaviour
     /// <param name="dest">Destination.</param>
     public Queue<SidewalkNode> GetPathFromRandomNode(Area dest)
     {
-        
-        return null;
+        Grid newGrid = frame.GetRandomGridInFrame();
+
+        return new Queue<SidewalkNode>(sidewalkGraph.Dijkstra(newGrid, dest));
     }
 }
