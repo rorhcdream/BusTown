@@ -4,6 +4,7 @@ public enum SidewalkNodeType
 {
     Default,
     TrafficLight,
-    BusStation
+    BusStation,
+    Entrance
 }
     

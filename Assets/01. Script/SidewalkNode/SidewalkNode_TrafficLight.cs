@@ -1,17 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SidewalkNode_TrafficLight: MonoBehaviour
+public class SidewalkNode_TrafficLight : SidewalkNode
 {
-    // Use this for initialization
-    void Start()
+    public SidewalkNode_TrafficLight(Grid grid, Vector2 position) : base(grid, position)
+    {}
+
+    public TrafficLightTimer TrafficLight { get; private set; }
+
+    public override SidewalkNodeType GetNodeType()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        return SidewalkNodeType.TrafficLight;
     }
 }

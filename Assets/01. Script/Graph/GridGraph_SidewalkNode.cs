@@ -40,9 +40,9 @@ class GridGraph_SidewalkNode : GridGraph<SidewalkNode>
             Vertex<SidewalkNode> curVertex;
             vertexDictionary_TryGetValue(curGrid, out curVertex, false);
 
-            ///TODO: 원하는 Area에 도달했는지 체크
-            throw new NotImplementedException();
-            //원하는 Area에 도달한 경우
+            //원하는 Area에 도달했는지 체크
+            SidewalkNode sn = curVertex.GetItem();
+            if(sn is SidewalkNode_Entrance && (sn as SidewalkNode_Entrance).area == dest)
             {
                 //previousGrid를 이용해 path 역추적
                 LinkedList<SidewalkNode> path = new LinkedList<SidewalkNode>();
@@ -102,5 +102,7 @@ class GridGraph_SidewalkNode : GridGraph<SidewalkNode>
             
         }
 
+        //dest에 해당하는 Area가 존재하지 않을 때
+        throw new ArgumentException("Area doesn't exist", "dest");
     }
 }

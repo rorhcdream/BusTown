@@ -1,13 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//SidewalkNodeType.Default
 public class SidewalkNode : MonoBehaviour, IPosition
 {
-    public SidewalkNodeType SidewalkNodeType
-    {
-        get;
-        private set;
-    }
     public Grid Grid
     {
         get;
@@ -15,20 +11,15 @@ public class SidewalkNode : MonoBehaviour, IPosition
     }
     public Vector2 Position { get; private set; }
 
-
-    //Type이 TrafficLight일때만 사용한다.
-    public TrafficLightTimer TrafficLight { get; private set; }
-
-    public SidewalkNode(SidewalkNodeType sidewalkNodeType, Grid grid, Vector2 position)
+    public SidewalkNode(Grid grid, Vector2 position)
     {
-        SidewalkNodeType = sidewalkNodeType;
         Grid = grid;
         Position = position;
     }
 
-    public void ChangeSidewalkNodeType(SidewalkNodeType sidewalkNodeType)
+    public virtual SidewalkNodeType GetNodeType()
     {
-        this.SidewalkNodeType = sidewalkNodeType;
+        return SidewalkNodeType.Default;
     }
 
 }
