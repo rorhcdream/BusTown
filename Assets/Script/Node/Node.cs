@@ -18,7 +18,6 @@ public abstract class Node : MonoBehaviour, IPosition
     public Vector2 Position { get; protected set; }
     
     
-    public event Action<bool> OnPassableSet;
     //통행 가능한 노드인가?
     private bool passable = true;
     public bool Passable
@@ -27,8 +26,6 @@ public abstract class Node : MonoBehaviour, IPosition
         protected set
         {
             passable = value;
-            if (OnPassableSet != null)
-                OnPassableSet(value);
         }
     }    
 }
