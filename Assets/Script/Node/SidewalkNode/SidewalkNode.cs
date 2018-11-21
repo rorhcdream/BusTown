@@ -4,17 +4,8 @@ using System.Collections;
 //SidewalkNodeType.Default
 public class SidewalkNode : Node
 {
-    public Grid Grid
-    {
-        get;
-        private set;
-    }
-
-    public SidewalkNode(Grid grid, Vector2 position)
-    {
-        Grid = grid;
-        Position = position;
-    }
+    public SidewalkNode(Grid grid, Vector2 position) : base(grid, position)
+    {}
 
     public virtual SidewalkNodeType GetNodeType()
     {

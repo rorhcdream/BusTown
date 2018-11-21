@@ -13,7 +13,5 @@ public class SidewalkNode_TrafficLight : SidewalkNode
     public override SidewalkNodeType GetNodeType()
     {
         return SidewalkNodeType.TrafficLight;
-    }
-
-    
+    }    
 }
