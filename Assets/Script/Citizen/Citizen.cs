@@ -11,7 +11,6 @@ public class Citizen : MonoBehaviour
     private static readonly float MOVEMENT_SPEED = 4.0f;    //사람의 이동 속도
     private static readonly float UPDATE_DELTATIME = 0.07f; //이동의 주기(초)
 
-    private bool pathChanged = false;   //버스 노선의 수정으로 이동 경로가 변경된 경우 체크
     private bool arrived = true;       //목적지 노드에 도착했는지 여부
 
     public Citizen(LinkedList<SidewalkNode> gotoList)
@@ -24,6 +23,11 @@ public class Citizen : MonoBehaviour
         if (gotoList == null)
             throw new ArgumentException("Citizen.gotoList is null", "gotoList");
         this.goToList = gotoList;
+
+        //기존 이동을 멈추고 새롭게 시작
+        StopCoroutine("MoveToDestination");
+        StopCoroutine("Move");
+        StartCoroutine(MoveToDestination());
     }
 
     void Start()
