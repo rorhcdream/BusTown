@@ -48,22 +48,29 @@ public class Citizen : MonoBehaviour
             endNode = goToList.First.Value;
             goToList.RemoveFirst();
 
-            //현재 노드가 신호등인 경우 체크
-            if (startNode.GetNodeType() == SidewalkNodeType.TrafficLight)
+            //현재 노드, 도착 노드가 신호등인 경우 체크
+            if (startNode.GetNodeType() == SidewalkNodeType.TrafficLight &&
+                endNode.GetNodeType() == SidewalkNodeType.TrafficLight)
             {
-                SidewalkNode_TrafficLight trafficLight = startNode as SidewalkNode_TrafficLight;
-                if(!trafficLight.isBlueLight)
-                {
-                    isWaiting = true;
-                    Action StopWaiting = () => isWaiting = false;
-                    trafficLight.OnBlueLightSet += StopWaiting;
+                SidewalkNode_TrafficLight startTL = startNode as SidewalkNode_TrafficLight;
+                SidewalkNode_TrafficLight endTL = endNode as SidewalkNode_TrafficLight;
 
-                    //신호등이 파란불이 될 때까지 대기
-                    while(isWaiting)
+                //두 신호등의 id가 같아야 횡단보도를 건너는 case임.
+                if (startTL.id == endTL.id)
+                {
+                    if (!startTL.isBlueLight)
                     {
-                        yield return null;
+                        isWaiting = true;
+                        Action StopWaiting = () => isWaiting = false;
+                        startTL.OnBlueLightSet += StopWaiting;
+
+                        //신호등이 파란불이 될 때까지 대기
+                        while (isWaiting)
+                        {
+                            yield return null;
+                        }
+                        startTL.OnBlueLightSet -= StopWaiting;
                     }
-                    trafficLight.OnBlueLightSet -= StopWaiting;
                 }
             }
 

@@ -9,15 +9,12 @@ public class SidewalkNode_TrafficLight : SidewalkNode
     public bool isBlueLight
     { get { return trafficLightTimer.SidewalkOn; }}
     public event Action OnBlueLightSet;
+    public readonly int id;     //짝이 맞는 신호등끼리는 같은 id를 가짐.
     
-    public SidewalkNode_TrafficLight(Grid grid, Vector2 position, TrafficLightTimer trafficLightTimer) : base(grid, position)
+    public SidewalkNode_TrafficLight(Grid grid, Vector2 position, TrafficLightTimer trafficLightTimer, int id) : base(grid, position)
     {
+        this.id = id;
         this.trafficLightTimer = trafficLightTimer;
-        SetTrafficLightTimerEvent();
-    }
-    public SidewalkNode_TrafficLight(Grid grid, Vector2 position) : base(grid, position)
-    {
-        this.trafficLightTimer = gameObject.AddComponent<TrafficLightTimer>();
         SetTrafficLightTimerEvent();
     }
 
