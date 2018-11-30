@@ -7,11 +7,11 @@ public class Citizen : MonoBehaviour
 {
     private LinkedList<SidewalkNode> goToList;
     private Area dest;
+    private bool isWaiting = false;  //신호등, 정류장 등의 이유로 이동하지 않고 대기 중인가?
 
     private static readonly float MOVEMENT_SPEED = 4.0f;    //사람의 이동 속도
     private static readonly float UPDATE_DELTATIME = 0.07f; //이동의 주기(초)
-
-    private bool arrived = true;       //목적지 노드에 도착했는지 여부
+    
 
     public Citizen(LinkedList<SidewalkNode> gotoList)
     {
@@ -48,10 +48,23 @@ public class Citizen : MonoBehaviour
             endNode = goToList.First.Value;
             goToList.RemoveFirst();
 
-            //다음 노드가 통행 가능해질 때까지 대기
-            while(!endNode.Passable)
+            //현재 노드가 신호등인 경우 체크
+            if (startNode.GetNodeType() == SidewalkNodeType.TrafficLight)
             {
-                yield return null;
+                SidewalkNode_TrafficLight trafficLight = startNode as SidewalkNode_TrafficLight;
+                if(!trafficLight.isBlueLight)
+                {
+                    isWaiting = true;
+                    Action StopWaiting = () => isWaiting = false;
+                    trafficLight.OnBlueLightSet += StopWaiting;
+
+                    //신호등이 파란불이 될 때까지 대기
+                    while(isWaiting)
+                    {
+                        yield return null;
+                    }
+                    trafficLight.OnBlueLightSet -= StopWaiting;
+                }
             }
 
             //이동
