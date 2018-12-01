@@ -35,7 +35,7 @@ public class Citizen : MonoBehaviour
         StartCoroutine(MoveToDestination());
     }
 
-    //gameObject를 gotoList를 따라 이동시키는 코루틴
+    //gameObject를 gotoList를 따라 이동시킴
     IEnumerator MoveToDestination()
     {
         SidewalkNode startNode, endNode;
@@ -62,14 +62,13 @@ public class Citizen : MonoBehaviour
                     {
                         isWaiting = true;
                         Action StopWaiting = () => isWaiting = false;
-                        startTL.OnBlueLightSet += StopWaiting;
+                        startTL.EnterTrafficLight(transform, StopWaiting);
 
                         //신호등이 파란불이 될 때까지 대기
                         while (isWaiting)
                         {
                             yield return null;
                         }
-                        startTL.OnBlueLightSet -= StopWaiting;
                     }
                 }
             }
